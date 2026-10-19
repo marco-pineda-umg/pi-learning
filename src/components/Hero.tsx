@@ -1,11 +1,22 @@
-import React from "react";
 import RotatingText from "./RotatingText";
-import { div } from "motion/react-client";
 const Hero = () => {
   return (
     <div className="mx-auto grid w-full max-w-10xl grid-cols-1 items-center gap-10 px-6 md:grid-cols-[3fr_2fr]">
       <div className="mx-auto">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl text-neutral-500">
+        <h1 className="relative inline-block text-3xl sm:text-4xl md:text-5xl text-neutral-500">
+          <svg
+            viewBox="0 0 40 40"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={3.5}
+            strokeLinecap="round"
+            aria-hidden="true"
+            className="pointer-events-none absolute top-[-0.5em] left-[-0.65em] size-[0.75em] text-brand"
+          >
+            <path d="M26 37 L14.1 35.9" />
+            <path d="M29.5 29.5 L18.2 18.2" />
+            <path d="M37 26 L35.9 14.1" />
+          </svg>
           Con nosotros
         </h1>
         <div className="flex items-center gap-2">
@@ -31,7 +42,7 @@ const Hero = () => {
         <h1 className="text-xl sm:text-sm md:text-2xl text-gray-700 mt-4">
           clases 1 a 1, cualquier modalidad, cualquier tema
         </h1>
-        <button className="text-xl font-bold py-2 px-7 bg-[#00BF63] rounded-full mt-7 text-white transition-colors hover:bg-[#259c63] border-2 border-[#259c63]">
+        <button className="text-xl font-bold py-2 px-7 bg-brand rounded-full mt-7 text-white transition-colors hover:bg-[#259c63] border-2 border-[#259c63]">
           Empezar
         </button>
       </div>

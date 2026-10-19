@@ -1,5 +1,3 @@
-import React from "react";
-
 const Subjects = () => {
   return (
     <div className="flex min-h-full flex-col items-center justify-center text-center">
