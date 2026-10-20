@@ -6,8 +6,8 @@ app.use(express.json());
 
 app.get("/api/health", async (req, res) => {
   try {
-    const { rows } = await pool.query("SELECT NOW()");
-    res.json({ ok: true, dbTime: row[0].now });
+    const { rows } = await pool.query<{ now: Date }>("SELECT NOW()");
+    res.json({ ok: true, dbTime: rows[0].now });
   } catch (err) {
     console.error(err);
     res.status(500).json({ ok: false });
