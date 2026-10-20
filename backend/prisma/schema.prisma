@@ -1,0 +1,52 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Rol {
+  estudiante
+  tutor
+  administrador
+}
+
+model Usuarios {
+  id                 Int       @id @default(autoincrement())
+  googleID           String    @unique
+  correo             String    @unique
+  nombre             String
+  rol                Rol?
+  telefono           String?
+  direccion          String?
+  lat                Float?
+  lon                Float?
+  foto               String?
+  genero             String?
+  documentoIdentidad String?
+  perfilCompleto     Boolean   @default(false)
+  suspendido         Boolean   @default(false)
+  razonSuspension    String?
+  suspendidoFecha    DateTime?
+  creadoFecha        DateTime  @default(now())
+
+  @@map("usuarios")
+}
+
+model Categorias {
+  id               Int    @id @default(autoincrement())
+  nombre           String @unique
+  categoriaPadreId Int?
+
+  categoriaPadre Categorias?  @relation("Subcategorias", fields: [categoriaPadreId], references: [id], onDelete: Restrict)
+  subcategorias  Categorias[] @relation("Subcategorias")
+
+  @@map("categorias")
+}
