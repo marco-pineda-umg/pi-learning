@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import Subjects from "./components/Subjects";
 import Card from "./components/Card";
 import { temas } from "./data/temas";
+import { Testimonials } from "./components/Testimonials";
 
 const App = () => {
   return (
@@ -10,7 +11,7 @@ const App = () => {
       <NavBar />
       <main>
         <section className="bg-white" id="hero">
-          <div className="mx-auto max-w-6xl px-6 py-20 mt-5 sm:mt-10 md:mt-16">
+          <div className="mx-auto max-w-7xl px-6 py-20 mt-5 sm:mt-10 md:mt-16">
             <Hero />
           </div>
         </section>
@@ -24,6 +25,7 @@ const App = () => {
             </div>
           </div>
         </section>
+        <Testimonials />
       </main>
     </>
   );

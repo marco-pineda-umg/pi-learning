@@ -8,14 +8,14 @@ const Hero = () => {
             viewBox="0 0 40 40"
             fill="none"
             stroke="currentColor"
-            strokeWidth={3.5}
+            strokeWidth={3}
             strokeLinecap="round"
             aria-hidden="true"
             className="pointer-events-none absolute top-[-0.5em] left-[-0.65em] size-[0.75em] text-brand"
           >
-            <path d="M26 37 L14.1 35.9" />
-            <path d="M29.5 29.5 L18.2 18.2" />
-            <path d="M37 26 L35.9 14.1" />
+            <path d="M26 37 C22 37.6 18 35.3 14.1 35.9" />
+            <path d="M29.5 29.5 C26.4 25 21.3 22.7 18.2 18.2" />
+            <path d="M37 26 C37.6 22 35.3 18 35.9 14.1" />
           </svg>
           Con nosotros
         </h1>
